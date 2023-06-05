@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<mat-card *ngFor="let item of usersList | async">
+  <div class="firstLine">
+    <span > UID: {{item.UID}}</span>
+    <i class="fa fa-trash-o" style="color:red" (click)="deleteUser(item)"></i>
+  </div>
+  <div> Name: {{item.name}}</div>
+  <div> email: {{item.email}}</div>
+</mat-card>

@@ -1,0 +1,9 @@
+<app-admin-navigation (newValueEvent)="changeComponent($event)"></app-admin-navigation>
+
+<div class="container">
+  <app-admin-users *ngIf="componentNumber === 0"></app-admin-users>
+  <app-admin-places *ngIf="componentNumber === 1"></app-admin-places>
+  <app-admin-flights *ngIf="componentNumber === 2"></app-admin-flights>
+  <app-admin-comments *ngIf="componentNumber === 3"></app-admin-comments>
+</div>
+

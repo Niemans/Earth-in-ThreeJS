@@ -1,0 +1,24 @@
+<form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="searchFlight()" novalidate>
+  <div>
+    <h1>Zaznacz Miejsce, skąd startujesz i dokąd chcesz lecieć</h1>
+    <p>By pokazać podróż, jaka cię czeka, niezbędne jest podanie punktów startowego i końcowego.</p>
+    <p>Miejsce początkowe:</p>
+  </div>
+  <mat-form-field>
+    <mat-label>Miejsce początkowe</mat-label>
+    <mat-select formControlName="SC" id="startingPlace">
+      <mat-option *ngFor="let city of cities | async" [value]="city"> {{city.name}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Miejsce końcowe:</p>
+  <mat-form-field>
+    <mat-label>Miejsce końcowe</mat-label>
+    <mat-select formControlName="FC" id="finishPlace">
+      <mat-option *ngFor="let city of cities | async" [value]="city"> {{city.name}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p></p>
+  <button [disabled]="!form.valid" mat-raised-button type="submit" id="okey" style="background-color: white;">
+    <span>Find</span>
+  </button>
+</form>

@@ -1,0 +1,23 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 64px;
+
+  background-color: rgb(0, 0, 0);
+  color: lightgray;
+
+  a {
+    text-decoration: none;
+    &.active-link {
+      color: white
+    }
+    span {
+      margin-left: 24px;
+    }
+    :hover{
+      cursor: pointer;
+    }
+  }
+  border-top: 3px;
+  border-top-color: black;
+}

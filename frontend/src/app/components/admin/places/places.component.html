@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<app-admin-place-create (placeCreated)="createPlace($event)"></app-admin-place-create>
+
+<mat-card *ngFor="let item of placesList | async">
+  <div class="firstLine">
+    <span > name: {{item.name}}</span>
+    <i class="fa fa-trash-o" style="color:red" (click)="deletePlace(item)"></i>
+  </div>
+  <div> latitude: {{item.latitude}}</div>
+  <div> longitude: {{item.longitude}}</div>
+</mat-card>

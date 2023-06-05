@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>
+    <a routerLinkActive="active-link" routerLink="/">
+      <span>Home</span>
+    </a>
+  </span>
+  <span>
+    <a *ngIf="isAuthenticated[1] && isAuthenticated[0]" routerLinkActive="active-link" routerLink="/admin">
+      <span>Admin</span>
+    </a>
+    <a *ngIf="!isAuthenticated[0]" routerLinkActive="active-link" routerLink="/login">
+      <span>Login</span>
+    </a>
+    <a *ngIf="!isAuthenticated[0]" routerLinkActive="active-link" routerLink="/signup">
+      <span>Sign up</span>
+    </a>
+    <a *ngIf="isAuthenticated[0]" (click)="logout()" routerLink>
+      <span>Logout</span>
+    </a>
+  </span>
+</mat-toolbar>

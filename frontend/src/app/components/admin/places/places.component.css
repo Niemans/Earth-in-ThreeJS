@@ -1,0 +1,20 @@
+
+.firstLine{
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card{
+  padding: 10px 20px;
+  margin-top: 5px;
+}
+
+mat-card:hover{
+  background-color: rgb(235, 235, 235);
+  transition: background-color 200ms linear;
+}
+
+
+i{
+  cursor: pointer;
+}

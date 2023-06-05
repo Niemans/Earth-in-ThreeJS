@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<app-flight-create  (flightCreated)="createFlight($event)"></app-flight-create>
+
+<mat-card *ngFor="let item of flightsList | async" >
+
+  <div style="margin-bottom: 10px;">
+    <div class="firstLine">
+      <span> startID: {{item.sPID}}</span>
+      <div>
+        <i class="fa fa-edit" style="color:red" (click)="updateFlight(item, time.value)"></i>
+        <i class="fa fa-trash-o" style="color:red" (click)="deleteFlight(item)"></i>
+      </div>
+    </div>
+    <div *ngFor="let place of placesList | async">
+      <div *ngIf="item.sPID == place.PID">
+        <span> Name: {{place.name}}</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <div class="firstLine">
+      <span> finishID: {{item.fPID}}</span>
+    </div>
+    <div *ngFor="let place of placesList | async">
+      <div *ngIf="item.fPID == place.PID">
+        <span> Name: {{place.name}}</span>
+      </div>
+    </div>
+  </div>
+
+  <mat-form-field>
+    <mat-label> Time (seconds)</mat-label>
+    <input matInput type="number" placeholder="3600 => 1h" #time value="{{item.time}}" required>
+  </mat-form-field>
+</mat-card>

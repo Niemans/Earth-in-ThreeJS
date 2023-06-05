@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<mat-card *ngFor="let item of commentList | async">
+  <div class="firstLine">
+    <h1 style="margin-bottom: 0px;">{{item.title}}</h1>
+    <i class="fa fa-trash-o" style="color:red" (click)="deleteCommentAdmin(item)"></i>
+  </div>
+  <h6>Created as {{item.created}}</h6>
+
+
+  <span>User ID: {{item.UID}}</span>
+  <div *ngFor="let user of userList | async">
+    <div *ngIf="item.UID == user.UID">
+      <span> Name: {{user.name}}</span>
+    </div>
+  </div>
+
+  <div *ngIf="item.PID != null">
+    <span style="margin-top: 10px;">Place ID:{{item.PID}}</span>
+    <div *ngFor="let place of placeList | async">
+      <div *ngIf="item.PID == place.PID">
+        <span> Name: {{place.name}}</span>
+      </div>
+    </div>
+  </div>
+
+  <p></p>
+
+  <div *ngIf="item.FID != null">
+    <span style="margin-top: 10px;">Flight ID: {{item.FID}}</span>
+    <div *ngFor="let flight of flightList | async">
+      <div *ngIf="item.FID == flight.FID">
+
+        <div style="padding-left: 10px;">
+          <div>
+            <span> startID: {{flight.sPID}}</span>
+          </div>
+          <div *ngFor="let place of placeList | async">
+            <div *ngIf="flight.sPID == place.PID">
+              <span> Name: {{place.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding-left: 10px;">
+          <div>
+            <span> finishID: {{flight.fPID}}</span>
+          </div>
+          <div *ngFor="let place of placeList | async">
+            <div *ngIf="flight.fPID == place.PID">
+              <span> Name: {{place.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <span style="padding-left: 10px;"> Time: {{flight.time}}</span>
+
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top: 3px; margin-bottom: 0px;">Content:</p>
+  <p>{{item.content}}</p>
+</mat-card>

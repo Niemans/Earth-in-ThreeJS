@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.flex {
+  display: flex;
+}
+
+select {
+  text-align-last:center; 
+}
+
+.select-items {
+  text-align:center;
+  text-align-last:center;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.choice {
+  align-self: center;
+}
+
+button {
+  padding-top: 1.0rem;
+  padding-bottom: 1.25rem;
+}

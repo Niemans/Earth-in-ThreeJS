@@ -1,0 +1,17 @@
+<mat-card *ngFor="let item of commentList" class="com">
+  <div class="content">
+    <div class="firstLine">
+      <h1 style="margin-bottom: 0px;">{{item.title}}</h1>
+    </div>
+    <h6>Created at {{item.created}}</h6>
+    <p>Posted by: {{item.userName}}</p>
+
+    <p></p>
+
+    <p style="margin-top: 3px; margin-bottom: 0px;">Content:</p>
+    <mat-card style="overflow-wrap: break-word;">
+      {{item.content}}
+    </mat-card>
+  </div>
+
+</mat-card>

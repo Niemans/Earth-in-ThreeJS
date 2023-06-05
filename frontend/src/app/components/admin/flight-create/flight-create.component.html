@@ -1,0 +1,25 @@
+<form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="createFlight()" novalidate>
+  <mat-form-field>
+    <mat-label> Starting City</mat-label>
+    <mat-select formControlName="SC">
+      <mat-option *ngFor="let city of cities | async" [value]="city"> {{city.name}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label> Finish City</mat-label>
+    <mat-select formControlName="FC">
+      <mat-option *ngFor="let city of cities | async" [value]="city"> {{city.name}} </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label> Time (seconds)</mat-label>
+    <input matInput type="number" placeholder="3600 => 1h" formControlName="Time" required>
+  </mat-form-field>
+
+  <button [disabled]="!form.valid" mat-raised-button type="submit" style="background-color: white;">
+    <span>Add</span>
+  </button>
+</form>
+

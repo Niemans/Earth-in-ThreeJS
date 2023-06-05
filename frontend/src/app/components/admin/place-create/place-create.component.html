@@ -1,0 +1,18 @@
+<form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="createPlace()" novalidate>
+  <mat-form-field>
+    <mat-label> City name</mat-label>
+    <input matInput type="text" placeholder="City Name" formControlName="name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Latitude</mat-label>
+    <input matInput type="text" placeholder="Ex. '51° 30' 35.5140'' N'" formControlName="latitude" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Longitude</mat-label>
+    <input matInput type="text" placeholder="Ex. '0° 7' 5.1312'' W'" formControlName="longitude" required>
+  </mat-form-field>
+  <button [disabled]="!form.valid" mat-raised-button type="submit" style="background-color: white;">
+    <span>Add</span>
+  </button>
+</form>
+

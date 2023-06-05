@@ -1,0 +1,38 @@
+
+
+.planet{
+  width: 50%;
+  float: right;
+  height: 100%;
+}
+
+.search{
+  width: 50%;
+  float: left;
+  padding-top: 15%;
+}
+
+.home{
+  width: 100%;
+  height: 824px;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.comments{
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+}
+
+.cl{
+  width: 47%;
+  float: left;
+  height: 100%;
+}
+
+.cr{
+  margin-left: 2%;
+  width: 47%;
+  float: left;
+  height: 100%;
+}
